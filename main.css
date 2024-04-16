@@ -3,8 +3,7 @@ body {
 }
 
 #app {
-  border: 3px solid orange;
-  margin: 90px auto;
+  margin: 40px auto;
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -13,7 +12,16 @@ body {
   row-gap: 35px;
 }
 
+#buttonsWrapper {
+  border: 1px solid red;
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  width: 17%
+}
 .card {
-  width: 400px;
-  height: 600px;
+  width: 15%;
 }

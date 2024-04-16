@@ -253,7 +253,6 @@ let domString = "";
     <h6>${pet.color}</h6>
     <p class="card-text">${pet.specialSkill}</p>
     <p>${pet.type}</p>
-    <a href="#" class="btn btn-primary">filter</a>
   </div>
 </div>`
   });
