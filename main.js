@@ -243,6 +243,32 @@ const pets = [
 
 const app = document.getElementById("app");
 
+const catFilter = document.querySelector("#catFilter")
+const dogFilter = document.querySelector("#dogFilter")
+const dinoFilter = document.querySelector("#dinoFilter")
+const noFilter = document.querySelector("#noFilter")
+
+const clickTestCat = () => {
+  console.log("hi guys haha loll catcatcat")
+}
+
+const clickTestDog = () => {
+  console.log("bark bark")
+}
+
+const clickTestDino = () => {
+  console.log("whatever sounds a dino makes idk")
+}
+
+const clickTestAll = () => {
+  console.log("i am cut from the cloth of god")
+}
+
+catFilter.addEventListener('click', clickTestCat)
+dogFilter.addEventListener('click', clickTestDog)
+dinoFilter.addEventListener('click', clickTestDino)
+noFilter.addEventListener('click', clickTestAll)
+
 let domString = "";
 
   pets.forEach((pet) => {
