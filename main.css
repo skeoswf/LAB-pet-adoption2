@@ -30,7 +30,10 @@ button {
   width: 15%;
   opacity: 90%;
   transition: all ease 0.3s;
-  border-style: 5px solid black;
+  border-style: solid solid none none;
+  border-width: 10px;
+  border-radius: 15% 0px 15% 0px;
+  border-color: rgb(155, 113, 143);
 }
 
 .card:hover {
@@ -38,7 +41,7 @@ button {
   box-shadow: 15px 15px rgb(34, 24, 23);
   background-color: rgb(227, 193, 220);
   opacity: 100%;
-  border-style: none;
+  /* border-style: none; */
 }
 
 h6 {
