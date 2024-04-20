@@ -63,3 +63,14 @@ h6 {
 form {
   background-color: beige;
 }
+
+.delete {
+  background-color: rgb(155, 113, 143);
+  line-height: 5px;
+  font-size: 12px;
+  width: 59px;
+  height: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 35px;
+}
