@@ -250,6 +250,17 @@ const noFilterButton = document.querySelector("#noFilter");
 
 const form = document.querySelector('form');
 
+const createDomString = (pet) => {
+  return `<div class="card">
+<div class="card-body">
+  <h5 class="card-title">${pet.name}</h5>
+  <img src="${pet.imageUrl}" class="card-img-top" alt="...">
+  <h6>${pet.color}</h6>
+  <p class="card-text description">${pet.specialSkill}</p>
+  <p class="petType">${pet.type}</p>
+</div>
+</div>`
+}
 
 let domString = "";
 
@@ -269,38 +280,20 @@ app.innerHTML = domString;
 
 const catFilter = () => {
   domString = "";
-
   pets.forEach((pet) => {
     if (pet.type === "cat") {
-    domString += `<div class="card">
-<div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-    <h6>${pet.color}</h6>
-    <p class="card-text description">${pet.specialSkill}</p>
-    <p class="petType">${pet.type}</p>
-</div>
-</div>`
+      domString += createDomString(pet);
     }
     app.innerHTML = domString;
   });
-}
+};
 
 const dogFilter = () => {
 
   domString = "";
-
   pets.forEach((pet) => {
     if (pet.type === "dog") {
-    domString += `<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-    <h6>${pet.color}</h6>
-    <p class="card-text description">${pet.specialSkill}</p>
-    <p class="petType">${pet.type}</p>
-  </div>
-</div>`
+      domString += createDomString(pet);
     }
     app.innerHTML = domString;
   });
@@ -310,18 +303,9 @@ const dogFilter = () => {
 const dinoFilter = () => {
 
   domString = "";
-
   pets.forEach((pet) => {
     if (pet.type === "dino") {
-    domString += `<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-    <h6>${pet.color}</h6>
-    <p class="card-text description">${pet.specialSkill}</p>
-    <p class="petType">${pet.type}</p>
-  </div>
-</div>`
+      domString += createDomString(pet);
     }
     app.innerHTML = domString;
   });
@@ -331,20 +315,10 @@ const dinoFilter = () => {
 const noFilter = () => {
 
   domString = "";
-
   pets.forEach((pet) => {
-    domString += `<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-    <h6>${pet.color}</h6>
-    <p class="card-text description">${pet.specialSkill}</p>
-    <p class="petType">${pet.type}</p>
-  </div>
-</div>`
+      domString += createDomString(pet);
     app.innerHTML = domString;
   });
-
 }
 
 catFilterButton.addEventListener('click', catFilter);
