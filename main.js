@@ -265,15 +265,8 @@ const createDomString = (pet) => {
 let domString = "";
 
 pets.forEach((pet) => {
-  domString += `<div class="card">
-<div class="card-body">
-  <h5 class="card-title">${pet.name}</h5>
-  <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-  <h6>${pet.color}</h6>
-  <p class="card-text description">${pet.specialSkill}</p>
-  <p class="petType">${pet.type}</p>
-</div>
-</div>`
+  domString += createDomString(pet);
+  app.innerHTML = domString;
 });
 
 app.innerHTML = domString;
@@ -289,7 +282,6 @@ const catFilter = () => {
 };
 
 const dogFilter = () => {
-
   domString = "";
   pets.forEach((pet) => {
     if (pet.type === "dog") {
@@ -297,11 +289,9 @@ const dogFilter = () => {
     }
     app.innerHTML = domString;
   });
-
 }
 
 const dinoFilter = () => {
-
   domString = "";
   pets.forEach((pet) => {
     if (pet.type === "dino") {
@@ -309,11 +299,9 @@ const dinoFilter = () => {
     }
     app.innerHTML = domString;
   });
-
 }
 
 const noFilter = () => {
-
   domString = "";
   pets.forEach((pet) => {
       domString += createDomString(pet);
@@ -342,18 +330,12 @@ const createNewPet = (e) => {
 
   domString = "";
   pets.forEach((pet) => {
-    domString += `<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-    <h6>${pet.color}</h6>
-    <p class="card-text description">${pet.specialSkill}</p>
-    <p class="petType">${pet.type}</p>
-  </div>
-  </div>`});
+    domString += createDomString(pet);
   app.innerHTML = domString;
+  });
+  
 
   form.reset();
-  }
+}
 
   form.addEventListener("submit", createNewPet);
