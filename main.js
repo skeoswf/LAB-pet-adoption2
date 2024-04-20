@@ -258,6 +258,7 @@ return `<div class="card">
 <h6>${pet.color}</h6>
 <p class="card-text description">${pet.specialSkill}</p>
 <p class="petType">${pet.type}</p>
+<button class="btn btn-danger delete" id="delete--${pet.id}">delete</button>
 </div>
 </div>`
 }
