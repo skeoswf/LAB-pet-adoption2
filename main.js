@@ -163,7 +163,7 @@ const pets = [
       id: 21,
       name: "miss kitty",
       color: "red",
-      specialSkill: "owns a nintendo power glove.",
+      specialSkill: "owns a nintendo power glove",
       type: "dino",
       imageUrl: "./img/misskittydino.png"
     },
