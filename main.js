@@ -243,10 +243,12 @@ const pets = [
 
 const app = document.getElementById("app");
 
-const catFilterButton = document.querySelector("#catFilter")
-const dogFilterButton = document.querySelector("#dogFilter")
-const dinoFilterButton = document.querySelector("#dinoFilter")
-const noFilterButton = document.querySelector("#noFilter")
+const catFilterButton = document.querySelector("#catFilter");
+const dogFilterButton = document.querySelector("#dogFilter");
+const dinoFilterButton = document.querySelector("#dinoFilter");
+const noFilterButton = document.querySelector("#noFilter");
+
+const form = document.querySelector('form');
 
 
 let domString = "";
@@ -349,3 +351,35 @@ catFilterButton.addEventListener('click', catFilter);
 dogFilterButton.addEventListener('click', dogFilter);
 dinoFilterButton.addEventListener('click', dinoFilter);
 noFilterButton.addEventListener('click', noFilter);
+
+const createNewPet = (e) => {
+  e.preventDefault();
+
+  const newPetObj = {
+    id: pets.length + 1,
+    name: document.querySelector("#name").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#specialSkill").value,
+    type: document.querySelector("#type").value,
+    imageUrl: document.querySelector("#image").value,
+  }
+
+  pets.push(newPetObj);
+
+  domString = "";
+  pets.forEach((pet) => {
+    domString += `<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">${pet.name}</h5>
+    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
+    <h6>${pet.color}</h6>
+    <p class="card-text description">${pet.specialSkill}</p>
+    <p class="petType">${pet.type}</p>
+  </div>
+  </div>`});
+  app.innerHTML = domString;
+
+  form.reset();
+  }
+
+  form.addEventListener("submit", createNewPet);
