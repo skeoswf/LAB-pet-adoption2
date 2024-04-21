@@ -353,11 +353,22 @@ const createNewPet = (e) => {
 
   pets.push(newPetObj);
 
-  domString = "";
-  pets.forEach((pet) => {
-    domString += createDomString(pet);
-    app.innerHTML = domString;
-  });
+  switch (filterValue) {
+    case 0:
+      noFilter();
+      break;
+    case 1:
+      catFilter();
+      break;
+    case 2:
+      dogFilter();
+      break;
+    case 3:
+      dinoFilter();
+      break;
+    default:
+      console.log("what happened");
+  }
 
   form.reset();
 };
