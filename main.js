@@ -283,6 +283,7 @@ const createDomString = (pet) => {
 };
 
 let domString = "";
+let filterValue = 0;
 
 pets.forEach((pet) => {
   domString += createDomString(pet);
@@ -297,6 +298,7 @@ const catFilter = () => {
     if (pet.type === "cat") {
       domString += createDomString(pet);
     }
+    filterValue = 1;
     app.innerHTML = domString;
   });
 };
@@ -307,6 +309,7 @@ const dogFilter = () => {
     if (pet.type === "dog") {
       domString += createDomString(pet);
     }
+    filterValue = 2;
     app.innerHTML = domString;
   });
 };
@@ -317,6 +320,7 @@ const dinoFilter = () => {
     if (pet.type === "dino") {
       domString += createDomString(pet);
     }
+    filterValue = 3;
     app.innerHTML = domString;
   });
 };
@@ -325,6 +329,7 @@ const noFilter = () => {
   domString = "";
   pets.forEach((pet) => {
     domString += createDomString(pet);
+    filterValue = 0;
     app.innerHTML = domString;
   });
 };
@@ -364,6 +369,21 @@ app.addEventListener("click", (e) => {
     const [, id] = e.target.id.split("--");
     const index = pets.findIndex((team) => team.id === Number(id));
     pets.splice(index, 1);
-    noFilter();
+    switch (filterValue) {
+      case 0:
+        noFilter();
+        break;
+      case 1:
+        catFilter();
+        break;
+      case 2:
+        dogFilter();
+        break;
+      case 3:
+        dinoFilter();
+        break;
+      default:
+        console.log("what happened");
+    }
   }
 });
