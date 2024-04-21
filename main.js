@@ -271,15 +271,15 @@ const form = document.querySelector("form");
 
 const createDomString = (pet) => {
   return `<div class="card">
-<div class="card-body">
-<h5 class="card-title">${pet.name}</h5>
-<img src="${pet.imageUrl}" class="card-img-top" alt="...">
-<h6>${pet.color}</h6>
-<p class="card-text description">${pet.specialSkill}</p>
-<p class="petType">${pet.type}</p>
-<button class="btn btn-danger delete" id="delete--${pet.id}">delete</button>
-</div>
-</div>`;
+              <div class="card-body">
+                <h5 class="card-title">${pet.name}</h5>
+                <img src="${pet.imageUrl}" class="card-img-top" alt="...">
+                <h6>${pet.color}</h6>
+                <p class="card-text description">${pet.specialSkill}</p>
+                <p class="petType">${pet.type}</p>
+                <button class="btn btn-danger delete" id="delete--${pet.id}">delete</button>
+              </div>
+          </div>`;
 };
 
 let domString = "";
